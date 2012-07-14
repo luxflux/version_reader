@@ -25,6 +25,11 @@ describe VersionReader do
       expect { subject.normal }.to raise_error(VersionReader::FileError)
     end
 
+    it "returns an empty string if error raising has been disabled" do
+      subject.raise_errors = false
+      subject.normal.should eq('Versionfile VERSION not found')
+    end
+
   end
 
 end
