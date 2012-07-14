@@ -9,6 +9,7 @@ class VersionReader
 
     initializer "version_reader.set_app_version" do |app|
       app.version = VersionReader.new(File.join(::Rails.root, 'VERSION'))
+      app.version.extend(VersionReader::Flavor::Rails)
       app.version.raise_errors = false
     end
 
