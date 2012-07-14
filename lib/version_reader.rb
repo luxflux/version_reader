@@ -2,6 +2,8 @@ class VersionReader
 
   class FileError < RuntimeError; end
 
+  autoload :Flavor, 'version_reader/flavor'
+
   attr_accessor :raise_errors
   attr_accessor :no_version_string
 
