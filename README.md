@@ -13,47 +13,38 @@ version_reader = VersionReader.new('~/CoolApp/VERSION')
 version_reader.normal # 0.4.2
 ```
 
-### Rails integration
+## Rails integration
 
 If you add this gem to your Gemfile of a Rails application it will
 automatically define ```CoolApp::Application.version``` and fill in a VersionReader instance.
 
-It will also load some Rails specific version format.
+It will also load some Rails flavor.
 
-#### Rails Env
-<table>
-  <tr>
-    <th></th>
-    <th>Test</th>
-    <th>Development</th>
-    <th>Production</th>
-    <th>$OtherEnvironment (e.g. staging)</th>
-  </tr>
-  <tr>
-    <td>
-      ```ruby CoolApp::Application.version.rails_env```
-    </td>
-    <td>0.4.2-test</td>
-    <td>0.4.2-development</td>
-    <td>0.4.2-production</td>
-    <td>0.4.2-staging</td>
-  </tr>
-  <tr>
-    <td>
-      ```ruby CoolApp::Application.version.rails_env_without(:production)```
-    </td>
-    <td>0.4.2-test</td>
-    <td>0.4.2-development</td>
-    <td>0.4.2</td>
-    <td>0.4.2-staging</td>
-  </tr>
-  <tr>
-    <td>
-      ```ruby CoolApp::Application.version.rails_env_without(:production,:staging)```
-    </td>
-    <td>0.4.2-test</td>
-    <td>0.4.2-development</td>
-    <td>0.4.2</td>
-    <td>0.4.2</td>
-  </tr>
-</table>
+## Flavors
+
+Flavors are an easy way to extend a VersionReader object with additional informations.
+
+### Rails
+
+The Rails flavor adds some additional methods which also show some information about the current Rails-Environment.
+
+#### rails_env
+
+Always adds the current Rails-Environment to the version. Maybe useful to see whether this is staging or not :)
+
+```ruby
+ruby CoolApp::Application.version.rails_env
+```
+Output would be ```0.4.2-development```.
+
+
+#### rails_env_without
+
+Adds the current Rails-Environment if it does not match one of the given environments.
+
+```ruby
+CoolApp::Application.version.rails_env_without(:production,:staging)
+```
+ 
+Output would be ```0.4.2-development``` or ```0.4.2``` for staging and production.
+ 
