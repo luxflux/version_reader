@@ -5,7 +5,7 @@ describe VersionReader do
 
   context "version file exists" do
     before do
-      File.should_receive(:read).with('VERSION').and_return('0.4.2')
+      File.should_receive(:read).with('VERSION').and_return("0.4.2\n")
     end
 
     subject do
