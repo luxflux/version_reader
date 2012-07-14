@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    version_reader (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -17,4 +22,5 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
+  version_reader!
   watchr
