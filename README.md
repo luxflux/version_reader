@@ -16,9 +16,7 @@ version_reader.normal # 0.4.2
 ## Rails integration
 
 If you add this gem to your Gemfile of a Rails application it will
-automatically define ```CoolApp::Application.version``` and fill in a VersionReader instance.
-
-It will also load some Rails flavor.
+automatically define ```CoolApp::Application.version``` and fill in a Rails-flavored VersionReader instance.
 
 ## Flavors
 
