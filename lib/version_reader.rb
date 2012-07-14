@@ -22,3 +22,6 @@ class VersionReader
   end
 
 end
+
+require 'version_reader/railtie' if defined?(Rails)
+
