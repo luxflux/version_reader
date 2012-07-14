@@ -7,8 +7,8 @@ Small Gem to read your version file.
 Assuming you have a file ~/CoolApp/VERSION with the content of ```0.4.2\n```.
 
 ```ruby
-    require 'version_reader'
+require 'version_reader'
 
-    version_reader = VersionReader.new('~/CoolApp/VERSION')
-    version_reader.normal # 0.4.2
+version_reader = VersionReader.new('~/CoolApp/VERSION')
+version_reader.normal # 0.4.2
 ```
