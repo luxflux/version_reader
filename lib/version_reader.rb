@@ -1,5 +1,7 @@
 class VersionReader
 
+  class FileError < RuntimeError; end
+
   def initialize(version_file)
     @version_file = version_file
   end
@@ -15,6 +17,8 @@ class VersionReader
 
   def read_version
     File.read(@version_file)
+  rescue Errno::ENOENT => error
+    raise VersionReader::FileError, error.to_s
   end
 
 end
