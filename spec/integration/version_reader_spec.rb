@@ -9,10 +9,10 @@ describe VersionReader do
 
   context "version file exists" do
     let(:version_file) do
-      File.expand_path(__FILE__) + '../../VERSION'
+      File.expand_path('../../../VERSION', __FILE__)
     end
 
-    its(:normal) { should =~ /\a\d\.\d\.\d\Z/ }
+    its(:normal) { should =~ /\A\d\.\d\.\d\z/ }
   end
 
   context "version file does not exist" do
