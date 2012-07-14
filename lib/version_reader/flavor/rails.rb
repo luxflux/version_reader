@@ -18,7 +18,7 @@ class VersionReader
 
       private
       def env
-        (@env ||= Rails.env).to_sym
+        (@env ||= ::Rails.env).to_sym
       end
 
     end
