@@ -3,16 +3,27 @@ require 'version_reader'
 
 describe VersionReader do
 
+  subject do
+    VersionReader.new('VERSION')
+  end
+
   context "version file exists" do
     before do
       File.should_receive(:read).with('VERSION').and_return("0.4.2\n")
     end
 
-    subject do
-      VersionReader.new('VERSION')
+    its(:normal) { should eq('0.4.2') }
+
+  end
+
+  context "version file does not exist" do
+    before do
+      File.should_receive(:read).with('VERSION').and_raise(Errno::ENOENT)
     end
 
-    its(:normal) { should eq('0.4.2') }
+    it "raises an VersionReader error" do
+      expect { subject.normal }.to raise_error(VersionReader::FileError)
+    end
 
   end
 
