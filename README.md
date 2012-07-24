@@ -1,4 +1,4 @@
-# version_reader
+# version_reader [![Build Status](https://secure.travis-ci.org/luxflux/version_reader.png?branch=master)](http://travis-ci.org/luxflux/version_reader)
 
 Small Gem to read your version file.
 
