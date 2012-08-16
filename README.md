@@ -31,7 +31,7 @@ The Rails flavor adds some additional methods which also show some information a
 Always adds the current Rails-Environment to the version. Maybe useful to see whether this is staging or not :)
 
 ```ruby
-ruby CoolApp::Application.version.rails_env
+CoolApp::Application.version.rails_env
 ```
 Output would be ```0.4.2-development```.
 
