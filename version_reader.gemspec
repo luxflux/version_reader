@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Easily read your VERSION file and display it in different formats}
   gem.summary       = %q{Reads your VERSION file and gives the ability to display it in an easy way}
   gem.homepage      = "https://github.com/luxflux/version_reader"
+  gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
