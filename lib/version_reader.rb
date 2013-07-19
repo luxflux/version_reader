@@ -17,6 +17,10 @@ class VersionReader
     version
   end
 
+  def to_s
+    normal
+  end
+
   private
   def version
     @version ||= read_version.strip
