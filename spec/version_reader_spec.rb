@@ -13,6 +13,7 @@ describe VersionReader do
     end
 
     its(:normal) { should eq('0.4.2') }
+    its(:to_s) { should eq('0.4.2') }
 
   end
 
